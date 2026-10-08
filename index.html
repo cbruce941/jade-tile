@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Jade Tile</title>
+<meta name="theme-color" content="#14212b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jade Tile">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-111-900-normal.woff2) format('woff2');unicode-range:U+83CA}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-115-900-normal.woff2) format('woff2');unicode-range:U+6885}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-116-900-normal.woff2) format('woff2');unicode-range:U+51AC}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-117-900-normal.woff2) format('woff2');unicode-range:U+79CB}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-118-900-normal.woff2) format('woff2');unicode-range:U+590F,U+7AF9}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-119-900-normal.woff2) format('woff2');unicode-range:U+4E03,U+4E5D}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-120-900-normal.woff2) format('woff2');unicode-range:U+516B,U+516D,U+6625,U+862D}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-121-900-normal.woff2) format('woff2');unicode-range:U+4E94,U+5357,U+56DB,U+842C,U+897F}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-122-900-normal.woff2) format('woff2');unicode-range:U+4E09,U+4E8C,U+5317,U+6771}
+@font-face{font-family:'Jade Han';font-weight:900;font-display:block;src:url(https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-tc@5.3.0/files/noto-serif-tc-123-900-normal.woff2) format('woff2');unicode-range:U+4E00,U+4E2D,U+767C}
+@font-face{font-family:'Figtree';font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/figtree@5.3.0/files/figtree-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/figtree@5.3.0/files/figtree-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/figtree@5.3.0/files/figtree-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Shippori Mincho B1';font-weight:800;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/shippori-mincho-b1@5.3.0/files/shippori-mincho-b1-latin-800-normal.woff2) format('woff2')}
+</style>
+</head>
+<body>
+<style>
+:root{
+  --table:#14212b; --table-hi:#1f3442; --lacquer:#0e1820;
+  --ivory:#f4eddc; --ivory-2:#e2d6bb; --jade:#2a7a5e; --jade-dk:#17503d;
+  --seal:#c8402c; --gold:#e8b84b; --ink:#1b2430;
+  --text:#ebe5d5; --muted:#8fa0a9; --line:rgba(235,229,213,.12);
+  --f-display:"Shippori Mincho B1","Songti SC","Times New Roman",serif;
+  --f-ui:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-han:"Jade Han","Noto Serif TC","Songti TC","PMingLiU","Noto Serif CJK TC",serif;
+  color-scheme:dark;
+}
+html,body{height:100%;overscroll-behavior:none}
+[hidden]{display:none!important}
+body{margin:0;background:radial-gradient(120% 80% at 50% 40%,var(--table-hi),var(--table) 60%,var(--lacquer));background-color:var(--table);color:var(--text);font-family:var(--f-ui);overflow:hidden;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.app{height:100%;display:flex;flex-direction:column;padding-inline:max(12px,env(safe-area-inset-left,0px));padding-top:env(safe-area-inset-top,0px);box-sizing:border-box}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px 4px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.seal{width:30px;height:30px;border-radius:6px;background:var(--seal);color:var(--ivory);display:grid;place-items:center;font-family:var(--f-han);font-size:18px;line-height:1;flex:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18)}
+.brand h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:19px;letter-spacing:.01em;white-space:nowrap}
+.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.stats{display:flex;gap:14px;font-variant-numeric:tabular-nums}
+.stat{text-align:right}
+.stat b{display:block;font-size:17px;font-weight:700}
+.stat span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+#board{position:relative;flex:1;min-height:0}
+#tiles{position:absolute;left:0;top:0}
+.tile{position:absolute;box-sizing:border-box;border-radius:14%/10.5%;background:linear-gradient(155deg,#fffaf0,var(--ivory) 45%,var(--ivory-2));cursor:pointer;transition:opacity .25s,transform .25s,filter .2s}
+.tile svg{width:100%;height:100%;display:block;pointer-events:none}
+.tile.blocked.dim{filter:brightness(.72) saturate(.8)}
+.tile.sel{background:linear-gradient(155deg,#fff6d6,#f6dd92);outline:3px solid var(--gold);outline-offset:-1px}
+.tile.hint{animation:pulse .5s ease-in-out 4 alternate}
+.tile.gone{opacity:0;transform:scale(.6) translateY(-12%);pointer-events:none}
+.tile.shake{animation:shake .3s}
+@keyframes pulse{to{background:linear-gradient(155deg,#e9fff4,#9fe0c2);outline:3px solid #6fd3a6}}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+footer{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-block:6px calc(10px + env(safe-area-inset-bottom,0px))}
+button{font:inherit;color:inherit}
+.tool{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;padding:9px 4px 7px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:600;cursor:pointer}
+.tool:active{background:rgba(255,255,255,.14)}
+.tool:disabled{opacity:.35}
+.tool svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.toast{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:var(--ink);border:1px solid var(--line);padding:10px 14px;border-radius:12px;font-size:14px;display:flex;align-items:center;gap:12px;white-space:nowrap;z-index:99999;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.toast button{background:var(--jade);border:0;border-radius:8px;padding:6px 10px;font-weight:700;cursor:pointer}
+.sheet-wrap{position:fixed;inset:0;background:rgba(5,10,14,.6);display:flex;align-items:flex-end;justify-content:center;z-index:100000}
+.sheet{width:100%;max-width:480px;background:var(--ink);border-radius:20px 20px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));box-sizing:border-box;border-top:1px solid var(--line)}
+.sheet h2{margin:0 0 4px;font-family:var(--f-display);font-size:22px}
+.sheet p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.45}
+.layouts{display:grid;gap:8px}
+.lay{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;text-align:left}
+.lay b{font-size:16px}
+.lay span{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.lay[aria-pressed="true"]{border-color:var(--gold);background:rgba(232,184,75,.1)}
+.row{display:flex;align-items:center;justify-content:space-between;padding-block:14px;font-size:15px}
+.switch{width:46px;height:28px;border-radius:14px;background:rgba(255,255,255,.15);border:0;position:relative;cursor:pointer}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--ivory);transition:transform .2s}
+.switch[aria-checked="true"]{background:var(--jade)}
+.switch[aria-checked="true"]::after{transform:translateX(18px)}
+.actions{display:flex;gap:8px}
+.btn{flex:1;border:0;border-radius:12px;padding:13px;font-weight:700;font-size:15px;cursor:pointer;background:rgba(255,255,255,.08)}
+.btn.primary{background:var(--seal);color:#fff}
+.howto{font-size:13px;color:var(--muted);line-height:1.5;margin:12px 0 0}
+.win-title{font-size:30px!important}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}.tile.hint{animation:none;outline:3px solid #6fd3a6}}
+</style>
+
+<div class="app">
+  <header>
+    <div class="brand"><div class="seal">中</div><div><h1>Jade Tile</h1><small id="layName">Pagoda</small></div></div>
+    <div class="stats">
+      <div class="stat"><b id="left">0</b><span>Tiles</span></div>
+      <div class="stat"><b id="moves">0</b><span>Pairs open</span></div>
+      <div class="stat"><b id="time">0:00</b><span>Time</span></div>
+    </div>
+  </header>
+  <div id="board"><div id="tiles"></div></div>
+  <footer>
+    <button class="tool" id="bUndo"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg>Undo</button>
+    <button class="tool" id="bHint"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>Hint</button>
+    <button class="tool" id="bShuffle"><svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Shuffle</button>
+    <button class="tool" id="bNew"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="13" height="17" rx="2"/><path d="M8 7h5M8 11h5"/><path d="M20 7v13a2 2 0 0 1-2 2H8"/></svg>New</button>
+  </footer>
+</div>
+<div class="sheet-wrap" id="sheet" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+// ---------- Layouts (x in tile widths, y in tile heights, z = layer) ----------
+function rect(x0,x1,y0,y1,z){const a=[];for(let y=y0;y<=y1+1e-6;y++)for(let x=x0;x<=x1+1e-6;x++)a.push({x,y,z});return a}
+const LAYOUTS={
+  lantern:{name:'Lantern',note:'Quick game',pos:()=>[...rect(0,5,0,7,0),...rect(1,4,1,6,1),...rect(2,3,2,5,2),...rect(2.5,2.5,3,4,3)]},
+  pagoda:{name:'Pagoda',note:'Classic stack',pos:()=>[...rect(0,6,0,7,0),...rect(1,5,1,6,1),...rect(2,4,2,5,2),...rect(2.5,3.5,2.5,4.5,3),...rect(3,3,3,4,4)]},
+  bridge:{name:'Twin Towers',note:'Longest game',pos:()=>[...rect(0,7,0,9,0),...rect(1,2,1,8,1),...rect(5,6,1,8,1),...rect(3,4,4,5,1),...rect(1.5,1.5,2,7,2),...rect(5.5,5.5,2,7,2)]}
+};
+for(const k in LAYOUTS)LAYOUTS[k].count=LAYOUTS[k].pos().length;
+
+// ---------- Tile faces ----------
+const TYPES=[];
+for(const s of['d','b','c'])for(let n=1;n<=9;n++)TYPES.push(s+n);
+TYPES.push('wE','wS','wW','wN','rR','rG','rW');
+const group=f=>f[0]==='f'?'F':f[0]==='s'?'S':f;
+const NUM='一二三四五六七八九';
+const C={blue:'#1f5fa8',green:'#24805a',red:'#c23b2a',ink:'#1b2430'};
+function han(ch,x,y,size,color){return `<text x="${x}" y="${y}" font-family='"Jade Han","Noto Serif TC","Songti TC","PMingLiU",serif' font-weight="900" font-size="${size}" fill="${color}" text-anchor="middle" dominant-baseline="central">${ch}</text>`}
+function idx(t,color){return `<text x="7" y="11" font-family="Figtree,system-ui,sans-serif" font-weight="700" font-size="10" fill="${color}">${t}</text>`}
+function dot(x,y,r,col){return `<circle cx="${x}" cy="${y}" r="${r}" fill="${col}"/><circle cx="${x}" cy="${y}" r="${r*.62}" fill="#fffaf0"/><circle cx="${x}" cy="${y}" r="${r*.34}" fill="${col}"/>`}
+const DOTS={1:[[30,40]],2:[[30,22],[30,58]],3:[[16,18],[30,40],[44,62]],4:[[18,22],[42,22],[18,58],[42,58]],5:[[17,19],[43,19],[30,40],[17,61],[43,61]],
+ 6:[[18,15],[42,15],[18,40],[42,40],[18,65],[42,65]],7:[[13,13],[30,21],[47,29],[19,50],[41,50],[19,68],[41,68]],
+ 8:[[19,12],[41,12],[19,31],[41,31],[19,49],[41,49],[19,68],[41,68]],9:[[14,17],[30,17],[46,17],[14,40],[30,40],[46,40],[14,63],[30,63],[46,63]]};
+function stick(x,y,h,col,w){w=w||7;const t=y-h/2;return `<rect x="${x-w/2}" y="${t}" width="${w}" height="${h}" rx="${w/2}" fill="${col}"/><rect x="${x-w/2-1}" y="${y-1.2}" width="${w+2}" height="2.4" rx="1.2" fill="${col}"/><rect x="${x-1}" y="${t+2}" width="2" height="${h-4}" rx="1" fill="rgba(255,255,255,.35)"/>`}
+const BAM={2:[[30,22,26],[30,58,26]],3:[[30,22,26],[18,58,26],[42,58,26]],4:[[19,22,26],[41,22,26],[19,58,26],[41,58,26]],
+ 5:[[17,22,26],[43,22,26],[30,40,26,1],[17,58,26],[43,58,26]],6:[[14,22,26],[30,22,26],[46,22,26],[14,58,26],[30,58,26],[46,58,26]],
+ 7:[[30,14,20,1],[14,42,20],[30,42,20],[46,42,20],[14,66,20],[30,66,20],[46,66,20]],
+ 8:[[12,22,26],[24,22,26],[36,22,26],[48,22,26],[12,58,26],[24,58,26],[36,58,26],[48,58,26]],
+ 9:[[14,15,20],[30,15,20,1],[46,15,20],[14,40,20],[30,40,20,1],[46,40,20],[14,65,20],[30,65,20,1],[46,65,20]]};
+const FACE_CACHE={};
+function faceSVG(f){
+  if(FACE_CACHE[f])return FACE_CACHE[f];
+  let s='';const k=f[0],n=+f[1];
+  if(k==='d'){const cols=[C.blue,C.green,C.red];const r=n===1?17:n===2?12:n<=5?10:n<=6?9:8;
+    DOTS[n].forEach((p,i)=>s+=dot(p[0],p[1],r,n===1?C.red:cols[(i+(n>4?1:0))%3]));if(n===1)s+=`<circle cx="30" cy="40" r="22" fill="none" stroke="${C.green}" stroke-width="2.4" stroke-dasharray="3 3"/>`;s+=idx(n,C.blue)}
+  else if(k==='b'){if(n===1){s+=stick(30,42,54,C.green,11)+`<circle cx="30" cy="15" r="6" fill="${C.red}"/>`}else BAM[n].forEach(p=>s+=stick(p[0],p[1],p[2],p[3]?C.red:C.green,n===8?6:7));s+=idx(n,C.green)}
+  else if(k==='c'){s+=han(NUM[n-1],30,26,26,C.ink)+han('萬',30,60,28,C.red)+idx(n,C.red)}
+  else if(k==='w'){const m={E:'東',S:'南',W:'西',N:'北'};s+=han(m[f[1]],30,42,40,C.ink)+idx(f[1],C.ink)}
+  else if(k==='r'){if(f[1]==='R')s+=han('中',30,42,44,C.red);else if(f[1]==='G')s+=han('發',30,42,42,C.green);
+    else s+=`<rect x="11" y="13" width="38" height="54" rx="4" fill="none" stroke="${C.blue}" stroke-width="4"/><rect x="17" y="19" width="26" height="42" rx="2" fill="none" stroke="${C.blue}" stroke-width="1.6"/>`}
+  else if(k==='f'){const m='梅蘭菊竹';s+=han(m[n-1],30,44,34,C.green)+idx(n,C.green)+`<text x="53" y="11" font-family="Figtree,sans-serif" font-weight="700" font-size="7.5" fill="${C.green}" text-anchor="end">FLOWER</text>`}
+  else if(k==='s'){const m='春夏秋冬';s+=han(m[n-1],30,44,34,'#b5571e')+idx(n,'#b5571e')+`<text x="53" y="11" font-family="Figtree,sans-serif" font-weight="700" font-size="7.5" fill="#b5571e" text-anchor="end">SEASON</text>`}
+  return FACE_CACHE[f]=`<svg viewBox="0 0 60 80" aria-hidden="true">${s}</svg>`;
+}
+
+// ---------- Geometry / rules ----------
+let pos=[],above=[],left=[],right=[];
+function buildGeometry(key){
+  pos=LAYOUTS[key].pos();above=pos.map(()=>[]);left=pos.map(()=>[]);right=pos.map(()=>[]);
+  pos.forEach((a,i)=>pos.forEach((b,j)=>{if(i===j)return;const dx=b.x-a.x,dy=Math.abs(b.y-a.y);
+    if(b.z===a.z+1&&Math.abs(dx)<1&&dy<1)above[i].push(j);
+    if(b.z===a.z&&dy<1){if(dx>-1.01&&dx<-0.99)left[i].push(j);if(dx>0.99&&dx<1.01)right[i].push(j)}}));
+}
+function freeIn(i,has){return above[i].every(j=>!has(j))&&(left[i].every(j=>!has(j))||right[i].every(j=>!has(j)))}
+const rnd=n=>Math.floor(Math.random()*n);
+function shuffled(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]]}return a}
+// Deal faces onto positions so that a full solution exists (reverse-removal construction).
+function solvableDeal(indices,pairs){
+  for(let attempt=0;attempt<400;attempt++){
+    const live=new Set(indices),order=[];let ok=true;
+    while(live.size){const has=j=>live.has(j);const fr=[...live].filter(i=>freeIn(i,has));
+      if(fr.length<2){ok=false;break}
+      const a=fr.splice(rnd(fr.length),1)[0],b=fr[rnd(fr.length)];live.delete(a);live.delete(b);order.push([a,b])}
+    if(!ok)continue;
+    const ps=shuffled(pairs),out={};order.forEach(([a,b],k)=>{const p=Math.random()<.5?ps[k]:[ps[k][1],ps[k][0]];out[a]=p[0];out[b]=p[1]});return out;
+  }
+  const out={},flat=shuffled(pairs.flat());indices.forEach((i,k)=>out[i]=flat[k]);return out;
+}
+function deckPairs(n){
+  const units=shuffled([...TYPES.map(t=>[[t,t],[t,t]]),[['f1','f2'],['f3','f4']],[['s1','s2'],['s3','s4']]]);
+  const out=[];for(const u of units){for(const p of u){if(out.length<n)out.push(p)}if(out.length>=n)break}return out;
+}
+
+// ---------- State ----------
+let S=null,sel=null,els=[],tickTimer=null,dim=true;
+const $=id=>document.getElementById(id);
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const prefs=store.get('jade-prefs')||{};if(prefs.dim===false)dim=false;
+function newGame(key){
+  key=key||(S&&S.key)||'pagoda';buildGeometry(key);
+  const idxs=pos.map((_,i)=>i),faces=solvableDeal(idxs,deckPairs(pos.length/2));
+  S={key,faces:idxs.map(i=>faces[i]),gone:idxs.map(()=>false),hist:[],elapsed:0,done:false,shuffles:0};
+  sel=null;render();save();
+}
+function load(data){if(!data||!LAYOUTS[data.key]||!data.faces)return false;buildGeometry(data.key);if(data.faces.length!==pos.length)return false;S=data;S.done=!!data.done;sel=null;render();return true}
+function save(){store.set('jade-save',S)}
+const has=j=>!S.gone[j];
+const isFree=i=>!S.gone[i]&&freeIn(i,has);
+const remaining=()=>S.gone.filter(g=>!g).length;
+function openPairs(){const g={};let c=0;S.faces.forEach((f,i)=>{if(isFree(i)){const k=group(f);g[k]=(g[k]||0)+1}});for(const k in g)c+=Math.floor(g[k]/2);return c}
+function findPair(){const g={};for(let i=0;i<pos.length;i++)if(isFree(i)){const k=group(S.faces[i]);if(g[k]!==undefined)return[g[k],i];g[k]=i}return null}
+
+// ---------- Rendering ----------
+let geo={w:40,h:53,d:4,ox:0,oy:0};
+function measure(){
+  const b=$('board').getBoundingClientRect();let maxX=0,maxY=0,maxZ=0;
+  pos.forEach(p=>{maxX=Math.max(maxX,p.x+1);maxY=Math.max(maxY,p.y+1);maxZ=Math.max(maxZ,p.z)});
+  const dr=0.085,ratio=4/3;
+  const w=Math.min(b.width/(maxX+maxZ*dr+dr+.1),(b.height-8)/((maxY*ratio)+maxZ*dr+dr+.1));
+  const h=w*ratio,d=w*dr;
+  const bw=maxX*w+d,bh=maxY*h+d;
+  geo={w,h,d,ox:(b.width-bw)/2+maxZ*d,oy:Math.max(4,(b.height-bh)/2)+maxZ*d};
+}
+function render(){
+  measure();const T=$('tiles');T.innerHTML='';els=[];
+  const {w,h,d}=geo;
+  pos.forEach((p,i)=>{const e=document.createElement('div');e.className='tile';
+    e.style.cssText=`left:${geo.ox+p.x*w-p.z*d}px;top:${geo.oy+p.y*h-p.z*d}px;width:${w-1}px;height:${h-1}px;z-index:${p.z*1000+Math.round(p.y*2)*40+Math.round(p.x*2)};`+
+      `box-shadow:${d*.35}px ${d*.35}px 0 #d4c6a5,${d*.7}px ${d*.7}px 0 var(--jade),${d}px ${d}px 0 var(--jade-dk),${d+2}px ${d+4}px ${d*2}px rgba(0,0,0,.45)`;
+    e.innerHTML=faceSVG(S.faces[i]);e.addEventListener('click',()=>tap(i));T.appendChild(e);els.push(e)});
+  $('layName').textContent=LAYOUTS[S.key].name;update();
+}
+function update(){
+  els.forEach((e,i)=>{e.classList.toggle('gone',S.gone[i]);const fr=isFree(i);e.classList.toggle('blocked',!fr);e.classList.toggle('dim',dim);e.classList.toggle('sel',sel===i);e.style.cursor=fr?'pointer':'default'});
+  $('left').textContent=remaining();$('moves').textContent=openPairs();$('bUndo').disabled=!S.hist.length;showTime();
+}
+function showTime(){const s=Math.floor(S.elapsed);$('time').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+
+// ---------- Play ----------
+function tap(i){
+  if(S.done||S.gone[i])return;hideToast();
+  if(!isFree(i)){const e=els[i];e.classList.remove('shake');void e.offsetWidth;e.classList.add('shake');return}
+  if(sel===null||sel===i){sel=sel===i?null:i}
+  else if(group(S.faces[sel])===group(S.faces[i])){S.gone[sel]=S.gone[i]=true;S.hist.push([sel,i]);sel=null;buzz(15);afterMove()}
+  else sel=i;
+  update();
+}
+function afterMove(){
+  if(!remaining()){S.done=true;update();save();win();return}
+  if(!openPairs())toast('No matching pairs are free.','Shuffle',shuffle);
+  save();
+}
+function undo(){if(!S.hist.length)return;const [a,b]=S.hist.pop();S.gone[a]=S.gone[b]=false;S.done=false;sel=null;hideToast();update();save()}
+function hint(){const p=findPair();if(!p){toast('No matching pairs are free.','Shuffle',shuffle);return}
+  p.forEach(i=>{els[i].classList.remove('hint');void els[i].offsetWidth;els[i].classList.add('hint')});setTimeout(()=>p.forEach(i=>els[i].classList.remove('hint')),2100)}
+function shuffle(){
+  const live=pos.map((_,i)=>i).filter(i=>!S.gone[i]);const byG={};live.forEach(i=>{const f=S.faces[i],g=group(f);(byG[g]=byG[g]||[]).push(f)});
+  const pairs=[];for(const g in byG){const fs=shuffled(byG[g]);for(let k=0;k+1<fs.length;k+=2)pairs.push([fs[k],fs[k+1]])}
+  const out=solvableDeal(live,pairs);live.forEach(i=>S.faces[i]=out[i]);S.shuffles++;sel=null;hideToast();
+  live.forEach(i=>els[i].innerHTML=faceSVG(S.faces[i]));update();save();
+}
+function buzz(ms){try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}}
+
+// ---------- Timer ----------
+let last=performance.now();
+function tick(){const now=performance.now();if(S&&!S.done&&!document.hidden&&$('sheet').hidden&&S.hist.length)S.elapsed+=(now-last)/1000;last=now;if(S)showTime()}
+setInterval(tick,500);setInterval(()=>S&&save(),5000);
+document.addEventListener('visibilitychange',()=>{last=performance.now();if(S)save()});
+
+// ---------- Toast / sheets ----------
+let toastEl=null;
+function toast(msg,label,fn){hideToast();toastEl=document.createElement('div');toastEl.className='toast';toastEl.innerHTML=`<span>${msg}</span>`;
+  if(label){const b=document.createElement('button');b.textContent=label;b.onclick=fn;toastEl.appendChild(b)}$('board').appendChild(toastEl)}
+function hideToast(){if(toastEl){toastEl.remove();toastEl=null}}
+function openSheet(html){$('sheetBody').innerHTML=html;$('sheet').hidden=false}
+function closeSheet(){$('sheet').hidden=true;last=performance.now()}
+$('sheet').addEventListener('click',e=>{if(e.target.id==='sheet'&&!S.done)closeSheet()});
+function fmt(s){s=Math.floor(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function bests(){return store.get('jade-best')||{}}
+function menu(){
+  let choice=S.key;const b=bests();
+  openSheet(`<h2 id="sheetTitle">New game</h2><p>Pick a layout. Every deal can be cleared.</p>
+    <div class="layouts">${Object.entries(LAYOUTS).map(([k,l])=>`<button class="lay" id="lay-${k}" data-k="${k}" aria-pressed="${k===choice}"><div><b>${l.name}</b><br><span>${l.note} · ${l.count} tiles</span></div><span>${b[k]?'Best '+fmt(b[k]):''}</span></button>`).join('')}</div>
+    <div class="row"><span>Darken blocked tiles</span><button class="switch" id="dimSwitch" role="switch" aria-checked="${dim}" aria-label="Darken blocked tiles"></button></div>
+    <div class="actions">${S.done?'':'<button class="btn" id="cancelBtn">Keep playing</button>'}<button class="btn primary" id="startBtn">Deal</button></div>
+    <p class="howto">Tap two matching tiles to clear them. A tile is free when nothing sits on top of it and its left or right side is open. Any flower matches any flower, and any season matches any season.</p>`);
+  document.querySelectorAll('.lay').forEach(x=>x.onclick=()=>{choice=x.dataset.k;document.querySelectorAll('.lay').forEach(y=>y.setAttribute('aria-pressed',y===x))});
+  $('dimSwitch').onclick=e=>{dim=!dim;e.currentTarget.setAttribute('aria-checked',dim);store.set('jade-prefs',{dim});update()};
+  if($('cancelBtn'))$('cancelBtn').onclick=closeSheet;
+  $('startBtn').onclick=()=>{closeSheet();newGame(choice)};
+}
+function win(){
+  const b=bests(),t=S.elapsed,rec=!b[S.key]||t<b[S.key];if(rec){b[S.key]=t;store.set('jade-best',b)}
+  openSheet(`<h2 id="sheetTitle" class="win-title">Board cleared</h2><p>${LAYOUTS[S.key].name} in ${fmt(t)}${S.shuffles?` with ${S.shuffles} shuffle${S.shuffles>1?'s':''}`:''}.${rec?' New best time.':' Best: '+fmt(b[S.key])+'.'}</p>
+    <div class="actions"><button class="btn" id="pickBtn">Change layout</button><button class="btn primary" id="againBtn">Deal again</button></div>`);
+  $('againBtn').onclick=()=>{closeSheet();newGame(S.key)};$('pickBtn').onclick=()=>{S.done=true;menu()};
+}
+
+$('bUndo').onclick=undo;$('bHint').onclick=hint;$('bShuffle').onclick=shuffle;$('bNew').onclick=menu;
+let rz;window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>S&&render(),120)});
+
+function start(data){
+  if(!(data&&data.S&&load(data.S))&&!load(store.get('jade-save')))newGame('pagoda');
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>S&&render());
+}
+start({});
+})();
+</script>
+
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+</script>
+</body>
+</html>
